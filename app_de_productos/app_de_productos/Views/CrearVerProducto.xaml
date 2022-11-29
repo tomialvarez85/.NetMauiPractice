@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_de_productos.Views.CrearVerProducto"
+             Title="Añadir o ver Producto"
+             Background="#E6E6E6">
+    
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="Padding" Value="10, 5"/>
+            <Setter Property="Margin" Value="0, 0, 0, 10"/>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Spacing="5" Margin="5, 10">
+
+        <Label 
+            Text="Nombre" />
+
+        <Frame>
+            <Entry 
+                x:Name="entryNombre"
+                Placeholder="Ingrese el nombre del producto" />
+        </Frame>
+
+        <Label 
+            Text="Marca" />
+
+        <Frame>
+            <Entry 
+                x:Name="entryMarca"
+                Placeholder="Ingrese el nombre de la marca" />
+        </Frame>
+
+
+        <Label 
+            Text="Precio" />
+
+        <Frame>
+            <Entry 
+                x:Name="entryPrecio"
+                Placeholder="Ingrese el precio del producto" />
+        </Frame>
+
+
+        <Label 
+            Text="Descripción" />
+
+        <Frame>
+            <Editor 
+                x:Name="entryDescripcion"
+                Placeholder="Ingrese una descripción para el producto" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Fill" 
+                VerticalTextAlignment="Start"
+                HeightRequest="100" />
+        </Frame>
+
+
+        <Label 
+            Text="Imagen" />
+
+        <Frame>
+            <Entry 
+                x:Name="entryImagen"
+                Placeholder="Ingrese la url de la imagen"
+                Keyboard="Url"/>
+        </Frame>
+
+
+        <Button Text="Añadir"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                WidthRequest="135"
+                HeightRequest="55" 
+                Margin="0, 10"
+                BackgroundColor="#9747FF"/>
+
+    </VerticalStackLayout>
+</ContentPage>
