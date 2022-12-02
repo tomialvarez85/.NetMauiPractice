@@ -1,41 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 Shell.NavBarIsVisible="False"
+             BackgroundColor="#E6E6E6"
              x:Class="app_de_productos.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+	<VerticalStackLayout Spacing="5">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+		<Label
+                Text="Productos Informáticos"
+                FontSize="26"
+                HorizontalTextAlignment="Center"
+                BackgroundColor="#9747FF"
+                TextColor="#FFFFFF"/>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+		<CollectionView>
+			<CollectionView.ItemsSource>
+				<x:Array Type="{x:Type model:Productos}">
+					<model:Productos
+                        Name="Computadora"
+                        Description="dkajdkad"/>
+					<model:Productos
+                        Name="Notebook"
+                        Description="dkaggggjdkad"/>
+					<model:Productos
+                        Name="Placa de Video"
+                        Description="dkajdsdgggad"/>
+				</x:Array>
+			</CollectionView.ItemsSource>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+			<CollectionView.ItemTemplate>
+				<DataTemplate x:DataType="model:Productos">
+					<ScrollView>
+						<VerticalStackLayout Padding="10" Spacing="10">
+							<Label
+                                Text="{Binding Name}"
+                                FontSize="24"/>
+							<Label
+                                Text="{Binding Description}"
+                                FontSize="18"/>
+						</VerticalStackLayout>
+					</ScrollView>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
 
-        </VerticalStackLayout>
-    </ScrollView>
+			<CollectionView.Footer>
+				<Button
+                    Text="Añadir Articulo"
+                    HorizontalOptions="Center"
+                    CornerRadius="20"
+                    BackgroundColor="#9747FF"
+                    TextColor="#FFFFFF"
+                    Command="{Binding AñadirCommand}"/>
+			</CollectionView.Footer>
+		</CollectionView>
+
+	</VerticalStackLayout>
 
 </ContentPage>
