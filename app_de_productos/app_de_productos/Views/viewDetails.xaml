@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:vistaAppABMProductos.ViewModel"
+             x:DataType="viewmodel:viewDetailViewModel"
              x:Class="app_de_productos.Views.viewDetails"
              Title="Detalles del Producto"
              Shell.BackgroundColor="#9747ff"
@@ -62,7 +64,8 @@
                     HorizontalOptions="Center"
                     WidthRequest="140" 
                     BorderColor="#E6E6E6"
-                    BorderWidth="2"/>
+                    BorderWidth="2"
+                    Command="{Binding EditCommand}"/>
 
                 <Button
                     x:Name="Borrar"

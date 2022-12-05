@@ -1,4 +1,7 @@
-﻿namespace app_de_productos;
+﻿using app_de_productos.Views;
+using vistaAppABMProductos.ViewModel;
+
+namespace app_de_productos;
 
 public static class MauiProgram
 {
@@ -13,6 +16,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        builder.Services.AddSingleton<viewDetails>();
+        builder.Services.AddSingleton<viewDetailViewModel>();
+
+        return builder.Build();
 	}
 }
