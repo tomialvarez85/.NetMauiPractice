@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:app_de_productos.ViewModel"
+             x:DataType="viewmodel:CrearVerProductoViewModel"
              x:Class="app_de_productos.Views.CrearVerProducto"
              Title="Añadir o ver Producto"
              Background="#E6E6E6">
@@ -29,9 +31,9 @@
             Text="Nombre" />
 
         <Frame>
-            <Entry 
-                x:Name="entryNombre"
-                Placeholder="Ingrese el nombre del producto" />
+            <Entry
+                Placeholder="Ingrese el nombre del producto" 
+                Text="{Binding Nombre}"/>
         </Frame>
 
         <Label 
@@ -39,8 +41,8 @@
 
         <Frame>
             <Entry 
-                x:Name="entryMarca"
-                Placeholder="Ingrese el nombre de la marca" />
+                Placeholder="Ingrese el nombre de la marca" 
+                Text="{Binding Marca}"/>
         </Frame>
 
 
@@ -48,9 +50,9 @@
             Text="Precio" />
 
         <Frame>
-            <Entry 
-                x:Name="entryPrecio"
-                Placeholder="Ingrese el precio del producto" />
+            <Entry
+                Placeholder="Ingrese el precio del producto" 
+                Text="{Binding Precio}"/>
         </Frame>
 
 
@@ -58,13 +60,13 @@
             Text="Descripción" />
 
         <Frame>
-            <Editor 
-                x:Name="entryDescripcion"
+            <Editor
                 Placeholder="Ingrese una descripción para el producto" 
                 VerticalOptions="Center" 
                 HorizontalOptions="Fill" 
                 VerticalTextAlignment="Start"
-                HeightRequest="100" />
+                HeightRequest="100" 
+                Text="{Binding Descripcion}"/>
         </Frame>
 
 
@@ -73,9 +75,9 @@
 
         <Frame>
             <Entry 
-                x:Name="entryImagen"
                 Placeholder="Ingrese la url de la imagen"
-                Keyboard="Url"/>
+                Keyboard="Url"
+                Text="{Binding Imagen}"/>
         </Frame>
 
 
@@ -85,7 +87,8 @@
                 WidthRequest="135"
                 HeightRequest="55" 
                 Margin="0, 10"
-                BackgroundColor="#9747FF"/>
+                BackgroundColor="#9747FF"
+                Command="{Binding CargarProductoCommand}"/>
 
     </VerticalStackLayout>
 </ContentPage>
