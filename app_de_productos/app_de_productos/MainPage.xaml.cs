@@ -1,24 +1,23 @@
-﻿namespace app_de_productos;
+﻿using app_de_productos.ViewModel;
+namespace app_de_productos;
+
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage(MainPageViewModel vm)
+    {
+        InitializeComponent();
+        BindingContext = vm;
+    }
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        ProductosDatabase database = await ProductosDatabase.Instance;
+        CollectionView.ItemsSource = await database.GetItemsAsync();
+    }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
 }
+
 

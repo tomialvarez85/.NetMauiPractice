@@ -18,14 +18,14 @@
 			<CollectionView.ItemsSource>
 				<x:Array Type="{x:Type model:Productos}">
 					<model:Productos
-                        Name="Computadora"
-                        Description="dkajdkad"/>
+                        Nombre="Computadora"
+                        Descripcion="dkajdkad"/>
 					<model:Productos
-                        Name="Notebook"
-                        Description="dkaggggjdkad"/>
+                        Nombre="Notebook"
+                        Descripcion="dkaggggjdkad"/>
 					<model:Productos
-                        Name="Placa de Video"
-                        Description="dkajdsdgggad"/>
+                        Nombre="Placa de Video"
+                        Descripcion="dkajdsdgggad"/>
 				</x:Array>
 			</CollectionView.ItemsSource>
 
@@ -34,10 +34,10 @@
 					<ScrollView>
 						<VerticalStackLayout Padding="10" Spacing="10">
 							<Label
-                                Text="{Binding Name}"
+                                Text="{Binding Nombre}"
                                 FontSize="24"/>
 							<Label
-                                Text="{Binding Description}"
+                                Text="{Binding Descripcion}"
                                 FontSize="18"/>
 						</VerticalStackLayout>
 					</ScrollView>
