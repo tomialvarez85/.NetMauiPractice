@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace app_de_productos.Models
 {
-    class Producto
+    public class Producto
     {
         //TODO armar la clase
     }
