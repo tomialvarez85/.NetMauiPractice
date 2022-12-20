@@ -72,7 +72,7 @@ namespace app_de_productos.Services
 
                 Producto p = new()
                 {
-                    //TODO crear registros para insertar, descomentar una vez creadas
+                    //TODO crear registros para insertar
 
                     //Nombre = nombre,
                     //Descripcion = descripcion,
