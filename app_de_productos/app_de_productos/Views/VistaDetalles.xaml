@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:app_de_productos.ViewModels"
+             x:DataType="viewmodel:VistaDetallesViewModel"
+             x:Class="app_de_productos.Views.VistaDetalles"
+             Title="{Binding Producto.Nombre}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="10"
+            Padding="20">
+            <Label
+                Text="Marca"
+                FontSize="16"
+                HorizontalOptions="Start" />
+            <Frame HeightRequest="45" Padding="10, 5" Margin="0, 0, 0, 10" HasShadow="True" BorderColor="White" 
+                   HorizontalOptions="FillAndExpand">
+                <Editor Placeholder="Marca del producto" HorizontalOptions="Fill" VerticalOptions="Center" 
+                        FontSize="14" IsReadOnly="True" Text="{Binding Producto.Marca}"/>
+            </Frame>
+            <Label
+                Text="Descripción"
+                FontSize="16"
+                HorizontalOptions="Start" />
+
+            <Frame HeightRequest="100" Padding="10, 5" Margin="0, 0, 0, 10" HasShadow="True" BorderColor="White">
+                <ScrollView>
+                    <Editor Placeholder="Ingrese la descripcion del producto" HorizontalOptions="Fill" VerticalOptions="Center" 
+                            FontSize="14" VerticalTextAlignment="Start" HeightRequest="100" IsReadOnly="True" Text="{Binding Producto.Descripcion}"/>
+                </ScrollView>
+            </Frame>
+
+            <Label
+                Text="Precio"
+                FontSize="16"
+                HorizontalOptions="Start" />
+
+            <Frame HeightRequest="45" Padding="10, 5" Margin="0, 0, 0, 10" HasShadow="True" BorderColor="White" 
+                   HorizontalOptions="FillAndExpand">
+                <Editor Placeholder="Ingrese el precio del producto" HorizontalOptions="Fill" VerticalOptions="Center" 
+                        FontSize="14" IsReadOnly="True" Text="{Binding Producto.Precio}"/>
+            </Frame>
+
+            <Label
+                Text="Cantidad"
+                FontSize="16"
+                HorizontalOptions="Start" />
+
+            <Frame HeightRequest="45" Padding="10, 5" Margin="0, 0, 0, 10" HasShadow="True" BorderColor="White" 
+                   HorizontalOptions="FillAndExpand">
+                <Editor Placeholder="Ingrese la cantidad" HorizontalOptions="Fill" VerticalOptions="Center" 
+                        FontSize="14" IsReadOnly="True" Text="{Binding Producto.Cantidad}"/>
+            </Frame>
+
+
+            <StackLayout
+            Grid.Row="3"
+            Margin="20,30,0,0"
+            Orientation="Horizontal">
+                <Button
+                    x:Name="Editar"
+                    Text="Editar"
+                    BackgroundColor="#9747ff"
+                    HorizontalOptions="Center"
+                    WidthRequest="140" 
+                    BorderColor="#E6E6E6"
+                    BorderWidth="2" 
+                    Command="{Binding IrAEditarProductoCommand}"/>
+
+                <Button
+                    x:Name="Borrar"
+                    Text="Borrar"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Center"
+                    WidthRequest="140"
+                    BorderColor="#E6E6E6"
+                    BorderWidth="2"
+                    Command="{Binding EliminarProductoCommand}"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
