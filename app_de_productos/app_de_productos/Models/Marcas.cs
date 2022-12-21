@@ -8,6 +8,6 @@ namespace app_de_productos.Models
 {
     public class Marcas
     {
-        //TODO armar la clase
+        //TODO armar laaa
     }
 }
