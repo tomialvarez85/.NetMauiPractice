@@ -8,75 +8,93 @@
              Shell.BackgroundColor="#9747ff"
              BackgroundColor="#E6E6E6">
 
-    <ScrollView>
-        <VerticalStackLayout
+	<ContentPage.Resources>
+		<Style TargetType="Label">
+			<Setter Property="HorizontalOptions" Value="Start"/>
+			<Setter Property="VerticalOptions" Value="Center"/>
+			<Setter Property="FontSize" Value="18" />
+		</Style>
+
+		<Style TargetType="Frame">
+			<Setter Property="HeightRequest" Value="45"/>
+			<Setter Property="Padding" Value="10, 5"/>
+			<Setter Property="Margin" Value="0, 0, 0, 10"/>
+			<Setter Property="HasShadow" Value="True"/>
+			<Setter Property="BorderColor" Value="White"/>
+			<Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+		</Style>
+
+		<Style TargetType="Editor">
+			<Setter Property="VerticalOptions" Value="Center"/>
+			<Setter Property="HorizontalOptions" Value="Fill"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="IsReadOnly" Value="True"/>
+
+		</Style>
+
+		<Style TargetType="Button">
+			<Setter Property="WidthRequest" Value="140"/>
+			<Setter Property="HorizontalOptions" Value="Center"/>
+			<Setter Property="BorderWidth" Value="2"/>
+			<Setter Property="BorderColor" Value="#E6E6E6"/>
+		</Style>
+	</ContentPage.Resources>
+
+	<ScrollView>
+		<VerticalStackLayout
             Spacing="10"
             Padding="20">
 
-            <Image
+			<Image
                 Source="imagen.png"
                 HeightRequest="200"
                 HorizontalOptions="CenterAndExpand"/>
 
-            <Label
-                Text="Marca"
-                FontSize="16"
-                HorizontalOptions="Start" />
+			<Label
+                Text="Marca"/>
 
-            <Frame HeightRequest="45" Padding="10, 5" Margin="0, 0, 0, 10" HasShadow="True" BorderColor="White" 
-                   HorizontalOptions="FillAndExpand">
-                <Editor Placeholder="Marca del producto" HorizontalOptions="Fill" VerticalOptions="Center" 
-                        FontSize="14" IsReadOnly="True"/>
-            </Frame>
+			<Frame>
+				<Editor Placeholder="Marca del producto"/>
+			</Frame>
 
-            <Label
-                Text="Descripción"
-                FontSize="16"
-                HorizontalOptions="Start" />
+			<Label
+                Text="Descripción"/>
 
-            <Frame HeightRequest="100" Padding="10, 5" Margin="0, 0, 0, 10" HasShadow="True" BorderColor="White">
-                <ScrollView>
-                    <Editor Placeholder="Ingrese la descripcion del producto" HorizontalOptions="Fill" VerticalOptions="Center" 
-                            FontSize="14" VerticalTextAlignment="Start" HeightRequest="100" IsReadOnly="True"/>
-                </ScrollView>
-            </Frame>
+			<Frame HeightRequest="100">
+				<ScrollView>
+					<Editor
+                        Placeholder="Ingrese la descripcion del producto"
+                        VerticalTextAlignment="Start"
+                        HeightRequest="100"/>
+				</ScrollView>
+			</Frame>
 
-            <Label
-                Text="Precio"
-                FontSize="16"
-                HorizontalOptions="Start" />
+			<Label
+                Text="Precio"/>
 
-            <Frame HeightRequest="45" Padding="10, 5" Margin="0, 0, 0, 10" HasShadow="True" BorderColor="White" 
-                   HorizontalOptions="FillAndExpand">
-                <Editor Placeholder="Ingrese el precio del producto" HorizontalOptions="Fill" VerticalOptions="Center" 
-                        FontSize="14" IsReadOnly="True"/>
-            </Frame>
+			<Frame>
+				<Editor
+                    Placeholder="Ingrese el precio del producto"/>
+			</Frame>
 
 
-            <StackLayout
-            Grid.Row="3"
-            Margin="20,30,0,0"
-            Orientation="Horizontal">
-                <Button
+			<StackLayout
+                Grid.Row="3"
+                Margin="20,30,0,0"
+                Orientation="Horizontal">
+
+				<Button
                     x:Name="Editar"
                     Text="Editar"
                     BackgroundColor="#9747ff"
-                    HorizontalOptions="Center"
-                    WidthRequest="140" 
-                    BorderColor="#E6E6E6"
-                    BorderWidth="2"
                     Command="{Binding EditCommand}"/>
 
-                <Button
+				<Button
                     x:Name="Borrar"
                     Text="Borrar"
-                    BackgroundColor="Red"
-                    HorizontalOptions="Center"
-                    WidthRequest="140"
-                    BorderColor="#E6E6E6"
-                    BorderWidth="2"/>
-            </StackLayout>
-        </VerticalStackLayout>
-    </ScrollView>
+                    BackgroundColor="Red"/>
 
+			</StackLayout>
+		</VerticalStackLayout>
+	</ScrollView>
 </ContentPage>
