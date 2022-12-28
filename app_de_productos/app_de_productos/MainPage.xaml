@@ -5,7 +5,15 @@
              BackgroundColor="#E6E6E6"
              x:Class="app_de_productos.MainPage">
 
-	<VerticalStackLayout Spacing="5">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Start"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Spacing="5">
 
 		<Label
                 Text="Productos Informáticos"
@@ -45,16 +53,15 @@
 				</DataTemplate>
 			</CollectionView.ItemTemplate>
 
-			<CollectionView.Footer>
-				<Button
+		</CollectionView>
+       
+        <Button
                     Text="Añadir Articulo"
                     HorizontalOptions="Center"
                     CornerRadius="20"
                     BackgroundColor="#9747FF"
                     TextColor="#FFFFFF"
                     Command="{Binding AñadirCommand}"/>
-			</CollectionView.Footer>
-		</CollectionView>
 
 	</VerticalStackLayout>
 
