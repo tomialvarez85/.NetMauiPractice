@@ -9,22 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vistaAppABMProductos.ViewModel
+namespace app_de_productos.ViewModel
 {
 
     [QueryProperty(nameof(ProductosDetail), "ProductosDetail")]
     public partial class viewDetailViewModel : ObservableObject
     {
         [ObservableProperty]
-        private ProductosModel _productosDetail = new ProductosModel();
+        private Productos _productosDetail = new Productos();
 
         private readonly IProductosService _productosService;
+
         public AddUpdateProductosDetailViewModel(IProductosService productosService)
         {
             _productosService = productosService;
+
         }
 
-        [ICommand]
+        [RelayCommand]
         public async void AddUpdateProductos()
         {
             int response = -1;
