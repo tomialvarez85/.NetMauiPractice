@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:vistaAppABMProductos.ViewModel"
+             x:DataType="viewmodel:viewDetailViewModel"
+             x:Class="app_de_productos.Views.viewDetails"
+             Title="Detalles del Producto"
+             Shell.BackgroundColor="#9747ff"
+             BackgroundColor="#E6E6E6">
+
+	<ContentPage.Resources>
+		<Style TargetType="Label">
+			<Setter Property="HorizontalOptions" Value="Start"/>
+			<Setter Property="VerticalOptions" Value="Center"/>
+			<Setter Property="FontSize" Value="18" />
+		</Style>
+
+		<Style TargetType="Frame">
+			<Setter Property="HeightRequest" Value="45"/>
+			<Setter Property="Padding" Value="10, 5"/>
+			<Setter Property="Margin" Value="0, 0, 0, 10"/>
+			<Setter Property="HasShadow" Value="True"/>
+			<Setter Property="BorderColor" Value="White"/>
+			<Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+		</Style>
+
+		<Style TargetType="Editor">
+			<Setter Property="VerticalOptions" Value="Center"/>
+			<Setter Property="HorizontalOptions" Value="Fill"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="IsReadOnly" Value="True"/>
+
+		</Style>
+
+		<Style TargetType="Button">
+			<Setter Property="WidthRequest" Value="140"/>
+			<Setter Property="HorizontalOptions" Value="Center"/>
+			<Setter Property="BorderWidth" Value="2"/>
+			<Setter Property="BorderColor" Value="#E6E6E6"/>
+		</Style>
+	</ContentPage.Resources>
+
+	<ScrollView>
+		<VerticalStackLayout
+            Spacing="10"
+            Padding="20">
+
+			<Image
+                Source="imagen.png"
+                HeightRequest="200"
+                HorizontalOptions="CenterAndExpand"/>
+
+            <Label
+                Text="Marca"/>
+
+            <Frame>
+                <Editor Text="{Binding ProductosDetail.marca}" Placeholder="Marca del producto"/>
+			</Frame>
+
+            <Label
+                Text="Descripción"/>
+
+            <Frame HeightRequest="100">
+				<ScrollView>
+					<Editor
+                        Text="{Binding ProductosDetail.descripcion}"
+                        Placeholder="Ingrese la descripcion del producto"
+                        VerticalTextAlignment="Start"
+                        HeightRequest="100"/>
+				</ScrollView>
+			</Frame>
+
+			<Label
+                Text="Precio"/>
+
+			<Frame>
+				<Editor
+                    Text="{Binding ProductosDetail.precio}"
+                    Placeholder="Ingrese el precio del producto"/>
+			</Frame>
+
+
+			<StackLayout
+                Grid.Row="3"
+                Margin="20,30,0,0"
+                Orientation="Horizontal">
+
+				<Button
+                    x:Name="Editar"
+                    Text="Editar"
+                    BackgroundColor="#9747ff"
+                    Command="{Binding EditCommand}"/>
+
+				<Button
+                    x:Name="Borrar"
+                    Text="Borrar"
+                    BackgroundColor="Red"/>
+
+			</StackLayout>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

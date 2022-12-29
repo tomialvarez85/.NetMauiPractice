@@ -4,11 +4,10 @@ namespace app_de_productos;
 
 public partial class AppShell : Shell
 {
-    public AppShell()
-    {
-        InitializeComponent();
+	public AppShell()
+	{
+		InitializeComponent();
 
-        Routing.RegisterRoute(nameof(VistaCrearEditarProducto), typeof(VistaCrearEditarProducto));
-        Routing.RegisterRoute(nameof(VistaDetalles), typeof(VistaDetalles));
+        Routing.RegisterRoute(nameof(CrearVerProducto), typeof(CrearVerProducto));
     }
 }
