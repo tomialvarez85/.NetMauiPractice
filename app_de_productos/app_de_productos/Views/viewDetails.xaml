@@ -50,19 +50,20 @@
                 HeightRequest="200"
                 HorizontalOptions="CenterAndExpand"/>
 
-			<Label
+            <Label
                 Text="Marca"/>
 
-			<Frame>
-				<Editor Placeholder="Marca del producto"/>
+            <Frame>
+                <Editor Text="{Binding ProductosDetail.marca}" Placeholder="Marca del producto"/>
 			</Frame>
 
-			<Label
+            <Label
                 Text="Descripción"/>
 
-			<Frame HeightRequest="100">
+            <Frame HeightRequest="100">
 				<ScrollView>
 					<Editor
+                        Text="{Binding ProductosDetail.descripcion}"
                         Placeholder="Ingrese la descripcion del producto"
                         VerticalTextAlignment="Start"
                         HeightRequest="100"/>
@@ -74,6 +75,7 @@
 
 			<Frame>
 				<Editor
+                    Text="{Binding ProductosDetail.precio}"
                     Placeholder="Ingrese el precio del producto"/>
 			</Frame>
 
