@@ -30,7 +30,7 @@ namespace app_de_productos.ViewModel
         public async void AddUpdateProductos()
         {
             int response = -1;
-            if (ProductosDetail.id_productos > 0)
+            if (ProductosDetail.Id > 0)
             {
                 response = await _productosService.UpdateProductos(ProductosDetail);
             }
@@ -38,9 +38,9 @@ namespace app_de_productos.ViewModel
             {
                 response = await _productosService.AddProductos(new Models.ProductosModel
                 {
-                    nombre = ProductosDetail.nombre,
-                    descripcion = ProductosDetail.descripcion,
-                    precio = ProductosDetail.precio,
+                    nombre = ProductosDetail.Nombre,
+                    descripcion = ProductosDetail.Descripcion,
+                    precio = ProductosDetail.Precio,
                 });
             }
         }
