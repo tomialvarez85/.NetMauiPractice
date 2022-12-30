@@ -1,4 +1,5 @@
 ﻿using app_de_productos.ViewModel;
+using app_de_productos.Services;
 namespace app_de_productos;
 
 
@@ -13,7 +14,7 @@ public partial class MainPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        ProductosDatabase database = await ProductosDatabase.Instance;
+        ProductosService database = await ProductosService.Instance;
         CollectionView.ItemsSource = await database.GetItemsAsync();
     }
 
