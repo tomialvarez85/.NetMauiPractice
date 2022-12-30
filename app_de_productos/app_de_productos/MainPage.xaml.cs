@@ -1,6 +1,5 @@
-﻿using app_de_productos.Models;
+﻿using app_de_productos.ViewModel;
 using app_de_productos.Services;
-using app_de_productos.ViewModel;
 namespace app_de_productos;
 
 
@@ -12,14 +11,7 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         BindingContext = vm;
     }
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        ProductosDatabase database = await ProductosDatabase.Instance;
-        CollectionView.ItemsSource = await database.GetItemsAsync();
-    }
-
-
+    
 }
 
 

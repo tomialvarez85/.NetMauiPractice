@@ -4,6 +4,7 @@
 			 Shell.NavBarIsVisible="False"
              BackgroundColor="#E6E6E6"
              x:Class="app_de_productos.MainPage"
+             xmlns:viewmodel="clr-namespace:app_de_productos.ViewModel"
              xmlns:model="clr-namespace:app_de_productos.Models">
 
     <ContentPage.Resources>
@@ -23,35 +24,31 @@
                 BackgroundColor="#9747FF"
                 TextColor="#FFFFFF"/>
 
-		<CollectionView>
-			<CollectionView.ItemsSource>
-				<x:Array Type="{x:Type model:Productos}">
-					<model:Productos
-                        Nombre="Computadora"
-                        Descripcion="dkajdkad"/>
-					<model:Productos
-                        Nombre="Notebook"
-                        Descripcion="dkaggggjdkad"/>
-					<model:Productos
-                        Nombre="Placa de Video"
-                        Descripcion="dkajdsdgggad"/>
-				</x:Array>
-			</CollectionView.ItemsSource>
-
-			<CollectionView.ItemTemplate>
+        <CollectionView>
+            <CollectionView.ItemTemplate>
 				<DataTemplate x:DataType="model:Productos">
-					<ScrollView>
-						<VerticalStackLayout Padding="10" Spacing="10">
-							<Label
+                    <Border
+                        StrokeShape="RoundRectangle 10"
+                        StrokeThickness="1.5"
+                        Margin="5">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodel:viewDetailViewModel}}, Path=IrADetallesProductoCommand}"
+                                CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout Padding="10" Spacing="10">
+                            <Label
                                 Text="{Binding Nombre}"
                                 FontSize="24"/>
-							<Label
-                                Text="{Binding Descripcion}"
-                                FontSize="18"/>
-						</VerticalStackLayout>
-					</ScrollView>
-
-				</DataTemplate>
+                            <Label
+                                Text="{Binding Marca}"
+                                FontSize="18" />
+                            <Label
+                                Text="{Binding Precio, StringFormat='$ {0}'}"
+                                FontSize="18" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
 			</CollectionView.ItemTemplate>
 
 		</CollectionView>

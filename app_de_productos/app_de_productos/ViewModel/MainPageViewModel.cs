@@ -6,7 +6,11 @@ namespace app_de_productos.ViewModel
 {
     public partial class MainPageViewModel : ObservableObject
     {
-
+        [RelayCommand]
+        async void IrADetallesProductoCommand()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(VistaDetalles)}");
+        }
         [RelayCommand]
         async void AñadirCommand()
         {
