@@ -11,14 +11,7 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         BindingContext = vm;
     }
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        ProductosService database = await ProductosService.Instance;
-        CollectionView.ItemsSource = await database.GetItemsAsync();
-    }
-
-
+    
 }
 
 
