@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using app_de_productos.Views;
 
 namespace app_de_productos.ViewModel
 {

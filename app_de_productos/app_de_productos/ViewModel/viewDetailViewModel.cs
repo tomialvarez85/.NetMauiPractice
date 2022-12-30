@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vistaAppABMProductos.ViewModel
+namespace app_de_productos.ViewModel
 {
 
     [QueryProperty(nameof(ProductosDetail), "ProductosDetail")]
