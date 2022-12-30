@@ -36,11 +36,11 @@ namespace app_de_productos.ViewModel
             }
             else
             {
-                response = await _productosService.AddProductos(new Models.ProductosModel
+                response = await _productosService.Addproducto(new Models.Productos
                 {
-                    nombre = ProductosDetail.Nombre,
-                    descripcion = ProductosDetail.Descripcion,
-                    precio = ProductosDetail.Precio,
+                    Nombre = ProductosDetail.Nombre,
+                    Descripcion = ProductosDetail.Descripcion,
+                    Precio = ProductosDetail.Precio,
                 });
             }
         }
