@@ -9,7 +9,7 @@ namespace app_de_productos.ViewModel
         [RelayCommand]
         async void IrADetallesProductoCommand()
         {
-            await Shell.Current.GoToAsync($"//{nameof(VistaDetalles)}");
+            await Shell.Current.GoToAsync($"//{nameof(viewDetails)}");
         }
         [RelayCommand]
         async void AñadirCommand()
