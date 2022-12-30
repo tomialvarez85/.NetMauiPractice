@@ -3,9 +3,9 @@ namespace app_de_productos.Views;
 
 public partial class viewDetails : ContentPage
 {
-    public viewDetails(viewDetailViewModel vm)
+    public viewDetails(viewDetailViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = vm;
+        this.BindingContext = viewModel;
     }
 }

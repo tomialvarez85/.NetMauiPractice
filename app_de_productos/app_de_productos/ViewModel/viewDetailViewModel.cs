@@ -20,7 +20,7 @@ namespace app_de_productos.ViewModel
 
         private readonly IProductosService _productosService;
 
-        public AddUpdateProductosDetailViewModel(IProductosService productosService)
+        public viewDetailViewModel(IProductosService productosService)
         {
             _productosService = productosService;
 
@@ -30,17 +30,17 @@ namespace app_de_productos.ViewModel
         public async void AddUpdateProductos()
         {
             int response = -1;
-            if (ProductosDetail.id_productos > 0)
+            if (ProductosDetail.Id > 0)
             {
                 response = await _productosService.UpdateProductos(ProductosDetail);
             }
             else
             {
-                response = await _productosService.AddProductos(new Models.ProductosModel
+                response = await _productosService.Addproducto(new Models.Productos
                 {
-                    nombre = ProductosDetail.nombre,
-                    descripcion = ProductosDetail.descripcion,
-                    precio = ProductosDetail.precio,
+                    Nombre = ProductosDetail.Nombre,
+                    Descripcion = ProductosDetail.Descripcion,
+                    Precio = ProductosDetail.Precio,
                 });
             }
         }
