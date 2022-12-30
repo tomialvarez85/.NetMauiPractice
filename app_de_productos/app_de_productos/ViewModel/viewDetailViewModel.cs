@@ -20,7 +20,7 @@ namespace app_de_productos.ViewModel
 
         private readonly IProductosService _productosService;
 
-        public AddUpdateProductosDetailViewModel(IProductosService productosService)
+        public viewDetailViewModel(IProductosService productosService)
         {
             _productosService = productosService;
 
