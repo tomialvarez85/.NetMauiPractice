@@ -32,8 +32,7 @@
 
         <Frame>
             <Entry
-                Placeholder="Ingrese el nombre del producto" 
-                Text="{Binding Nombre}"/>
+                Placeholder="Ingrese el nombre del producto" />
         </Frame>
 
         <Label 
@@ -41,8 +40,7 @@
 
         <Frame>
             <Entry 
-                Placeholder="Ingrese el nombre de la marca" 
-                Text="{Binding Marca}"/>
+                Placeholder="Ingrese el nombre de la marca" />
         </Frame>
 
 
@@ -51,8 +49,7 @@
 
         <Frame>
             <Entry
-                Placeholder="Ingrese el precio del producto" 
-                Text="{Binding Precio}"/>
+                Placeholder="Ingrese el precio del producto" />
         </Frame>
 
 
@@ -65,8 +62,7 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Fill" 
                 VerticalTextAlignment="Start"
-                HeightRequest="100" 
-                Text="{Binding Descripcion}"/>
+                HeightRequest="100" />
         </Frame>
 
 
@@ -76,8 +72,7 @@
         <Frame>
             <Entry 
                 Placeholder="Ingrese la url de la imagen"
-                Keyboard="Url"
-                Text="{Binding Imagen}"/>
+                Keyboard="Url" />
         </Frame>
 
 
